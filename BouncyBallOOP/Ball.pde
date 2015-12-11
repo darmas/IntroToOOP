@@ -12,7 +12,7 @@ class Ball {
     vel= PVector.random2D();
     vel.mult(5);
   }
- Ball(float tDiam){
+ Ball(float tDiam){//new constructor 
    diam=tDiam;
    loc = new PVector(random(diam, width-diam), random(diam, height-diam));
     c = color(random(255), random(50), random(100, 255));
@@ -27,11 +27,11 @@ class Ball {
     ellipse(loc.x, loc.y, diam, diam);
   }
 
-void move(){
+void move(){//balls move
   loc.add(vel);
 }
 
-void bounce(){
+void bounce(){//balls bounce 
   if(loc.x+diam/2>width||loc.x-diam/2<0){
     vel.x=-vel.x;
   }
